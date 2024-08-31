@@ -14,7 +14,8 @@
 
 body {
   margin: 0;
-  cursor: default;
+  /* Remove or comment out the cursor line to restore the default cursor */
+  /* cursor: none; */
   overflow: hidden;
 }
 
@@ -74,3 +75,4 @@ canvas {
   top: 0;
   left: 0;
 }
+
