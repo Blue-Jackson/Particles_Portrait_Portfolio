@@ -14,8 +14,7 @@
 
 body {
   margin: 0;
-  /* Remove or comment out the cursor line to restore the default cursor */
-  /* cursor: none; */
+  cursor: none;
   overflow: hidden;
 }
 
@@ -56,18 +55,30 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 16px; /* Smaller cursor size */
+  height: 16px;
   transform: translate3d(var(--mouse-x), var(--mouse-y), 0);
   pointer-events: none;
   z-index: 1000;
+  opacity: 0; /* Start with 0% opacity */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
 .pointer {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 1); /* White circle */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1); /* White color */
   border-radius: 50%;
+}
+
+/* Set opacity to 100% when the cursor is moved */
+body:hover .cursor,
+body:focus-within .cursor {
+  opacity: 1;
+}
+
+body:not(:hover) .cursor {
+  opacity: 0; /* Hide the cursor when the mouse is off the canvas */
 }
 
 .content-canvas {
