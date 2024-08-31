@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  cursor: default;
+  cursor: none; /* Hide the default cursor */
   overflow: hidden;
 }
 
@@ -62,6 +62,7 @@ canvas {
   z-index: 1000;
   opacity: 0; /* Start with 0% opacity */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  mix-blend-mode: difference; /* Set blending mode to difference */
 }
 
 .pointer {
@@ -86,4 +87,3 @@ body:not(:hover) .cursor {
   top: 0;
   left: 0;
 }
-
